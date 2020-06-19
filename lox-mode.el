@@ -52,19 +52,19 @@
 
 (defvar lox-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-c C-c") 'lox-run)
+    (define-key map (kbd "C-c C-r") 'lox-run)
     map)
   "Keymap for Lox mode.")
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.lox\\'" . lox-mode))
 
-;; Derive the mode from java-mode for automatic syntax highlighting and
+;; Derive the mode from c-mode for automatic syntax highlighting and
 ;; indentation. Once a custom formatter is written for this mode, this
 ;; can probably derive from prog-mode instead.
 
 ;;;###autoload
-(define-derived-mode lox-mode java-mode "Lox"
+(define-derived-mode lox-mode c-mode "Lox"
   "A major mode for the Lox programming language."
   :group 'lox-mode
   (setq-local comment-start "// ")
