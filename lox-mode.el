@@ -1,4 +1,4 @@
-;;; lox-mode.el --- Major mode for the Lox programming language -*- lexical-binding: t -*-.
+;;; lox-mode.el --- Major mode for the Lox programming language -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2020 Timmy Jose<zoltan.jose@gmail.com>
 
@@ -6,6 +6,8 @@
 ;; Maintainer: Timmy Jose <zoltan.jose@gmail.com>
 ;; Version: 1.0
 ;; Keywords: languages, lox
+;; Package-Requires: ((emacs "24.3"))
+
 ;; Homepage: https://github.com/timmyjose-projects/lox-mode
 
 ;; This file is not part of GNU Emacs.
@@ -30,7 +32,7 @@
 
 (defvar lox-mode-hook nil)
 
-(defgroup lox-mode nil
+(defgroup lox-mode-group nil
   "Lox mode configuration group."
   :link '(url-link "https://www.craftinginterpreters.com/the-lox-language.html")
   :group 'languages)
@@ -39,7 +41,7 @@
   "Path to the Lox executable."
   :type 'string
   :safe #'stringp
-  :group 'lox-mode)
+  :group 'lox-mode-group)
 
 ;; Lox-specific
 
