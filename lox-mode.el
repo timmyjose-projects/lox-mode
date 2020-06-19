@@ -41,6 +41,23 @@
   :safe #'stringp
   :group 'lox-mode)
 
+;; Lox-specific
+
+(defconst lox-keywords
+  '("class" "fun" "var" "for" "if" "else" "while" "return" "and" "or" "super" "this"))
+
+(defconst lox-builtins
+  '("print"))
+
+(defconst lox-constants
+  '("true" "false" "nil"))
+
+(defvar lox-font-lock-definitions
+  (append
+   `((,(regexp-opt lox-keywords) . font-lock-keyword-face)
+     (,(regexp-opt lox-builtins) . font-lock-builtin-face)
+     (,(regexp-opt lox-constants) . font-lock-constant-face))))
+
 ;; supported commands
 
 ;;;###autoload
@@ -60,16 +77,18 @@
 (add-to-list 'auto-mode-alist '("\\.lox\\'" . lox-mode))
 
 ;; Derive the mode from c-mode for automatic syntax highlighting and
-;; indentation. Once a custom formatter is written for this mode, this
+;; indentation. Once (if) a custom formatter is written for this mode, this
 ;; can probably derive from prog-mode instead.
 
 ;;;###autoload
 (define-derived-mode lox-mode c-mode "Lox"
-  "A major mode for the Lox programming language."
+  "A major mode for the Lox programming language.
+
+  \\{lox-mode-map}"
   :group 'lox-mode
   (setq-local comment-start "// ")
   (setq-local comment-end "")
-  (use-local-map lox-mode-map))
+  (setq font-lock-defaults '(lox-font-lock-definitions)))
 
 (provide 'lox-mode)
 
