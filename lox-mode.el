@@ -66,8 +66,7 @@
 (defun lox-run ()
   "Run the currently loaded script."
   (interactive)
-  (compile (concat lox-bin " " (buffer-file-name)))
-  (other-window 1))
+  (compile (concat lox-bin " " (buffer-file-name))))
 
 (defvar lox-mode-map
   (let ((map (make-sparse-keymap)))
