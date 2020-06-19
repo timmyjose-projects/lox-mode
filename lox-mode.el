@@ -86,7 +86,7 @@
   "A major mode for the Lox programming language.
 
   \\{lox-mode-map}"
-  :group 'lox-mode
+  :group 'lox-mode-group
   (setq-local comment-start "// ")
   (setq-local comment-end "")
   (setq font-lock-defaults '(lox-font-lock-definitions)))
