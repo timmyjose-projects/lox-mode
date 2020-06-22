@@ -21,7 +21,22 @@ Clone this project to a directory of your choice, and add the following lines to
 
 ### Melpa
 
-<TBD>
+The package is also available on [MELPA](https://melpa.org/#/lox-mode) and [MELPA](https://stable.melpa.org/#/lox-mode).
+
+You can install the package using the usual methods you employ to install such packages. To install manually from `MELPA`
+or `MELPA STABLE`:
+
+```
+  M-x package-refresh-contents
+
+```
+
+followed by:
+
+```
+  M-x package-install RET lox-mode
+
+```
 
 ## Usage
 
